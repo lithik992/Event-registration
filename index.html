@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Event Registration Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        EventHub
+    </div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#add-event">Add Event</a>
+        <a href="#events">Events</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            EVENT MANAGEMENT PLATFORM
+        </span>
+
+        <h1>
+            Plan Events.
+            <span>Manage Registrations.</span>
+        </h1>
+
+        <p>
+            Create events, manage participants and track
+            registrations from one simple dashboard.
+        </p>
+
+        <a href="#add-event" class="hero-btn">
+            Create Event
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="dashboard" id="dashboard">
+
+    <div class="section-title">
+
+        <h2>
+            Event Dashboard
+        </h2>
+
+        <p>
+            Monitor your events and registrations.
+        </p>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                E
+            </div>
+
+            <h3 id="totalEvents">
+                0
+            </h3>
+
+            <p>
+                Total Events
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon registration-icon">
+                R
+            </div>
+
+            <h3 id="totalRegistrations">
+                0
+            </h3>
+
+            <p>
+                Registrations
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon seats-icon">
+                S
+            </div>
+
+            <h3 id="availableSeats">
+                0
+            </h3>
+
+            <p>
+                Available Seats
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon full-icon">
+                F
+            </div>
+
+            <h3 id="fullEvents">
+                0
+            </h3>
+
+            <p>
+                Full Events
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="add-section" id="add-event">
+
+    <div class="section-title">
+
+        <h2>
+            Create New Event
+        </h2>
+
+        <p>
+            Add event details and registration capacity.
+        </p>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <form id="eventForm">
+
+            <div class="form-group">
+
+                <label>
+                    Event Name
+                </label>
+
+                <input
+                    type="text"
+                    id="eventName"
+                    placeholder="Example: Tech Fest 2026"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Organizer
+                </label>
+
+                <input
+                    type="text"
+                    id="organizer"
+                    placeholder="Example: Computer Science Department"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Event Type
+                </label>
+
+                <select id="eventType">
+
+                    <option value="Workshop">
+                        Workshop
+                    </option>
+
+                    <option value="Hackathon">
+                        Hackathon
+                    </option>
+
+                    <option value="Seminar">
+                        Seminar
+                    </option>
+
+                    <option value="Conference">
+                        Conference
+                    </option>
+
+                    <option value="Competition">
+                        Competition
+                    </option>
+
+                    <option value="Cultural">
+                        Cultural
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Venue
+                </label>
+
+                <input
+                    type="text"
+                    id="venue"
+                    placeholder="Example: Main Auditorium"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Event Date
+                </label>
+
+                <input
+                    type="date"
+                    id="eventDate"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Registration Capacity
+                </label>
+
+                <input
+                    type="number"
+                    id="capacity"
+                    placeholder="Example: 100"
+                    min="1"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="add-btn"
+            >
+                Create Event
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<section class="events-section" id="events">
+
+    <div class="section-title">
+
+        <h2>
+            Available Events
+        </h2>
+
+        <p>
+            Search events and manage registrations.
+        </p>
+
+    </div>
+
+
+    <div class="controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search events..."
+        >
+
+
+        <select id="typeFilter">
+
+            <option value="All">
+                All Event Types
+            </option>
+
+            <option value="Workshop">
+                Workshop
+            </option>
+
+            <option value="Hackathon">
+                Hackathon
+            </option>
+
+            <option value="Seminar">
+                Seminar
+            </option>
+
+            <option value="Conference">
+                Conference
+            </option>
+
+            <option value="Competition">
+                Competition
+            </option>
+
+            <option value="Cultural">
+                Cultural
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div
+        id="eventsContainer"
+        class="events-grid"
+    ></div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 EventHub | Event Registration Management
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
